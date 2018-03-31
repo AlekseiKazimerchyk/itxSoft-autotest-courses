@@ -7,4 +7,4 @@
   - калькулятор
   - тест-кейсы для калькулятора
 ### task 03
-  - тест-кейсы для страницы [angular.io](https://angular.io/docs)
+  - тест-кейсы для страницы [angular.io/docs](https://angular.io/docs)
