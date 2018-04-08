@@ -4,7 +4,6 @@ import java.util.Scanner;
 
 public class StartPoint {
     public static void main(String[] args) {
-
         Scanner scanner = new Scanner(System.in);
         Calculator calculator = new Calculator();
 
@@ -12,6 +11,6 @@ public class StartPoint {
         char operator = scanner.next().charAt(0);
         double operand2 = scanner.nextDouble();
 
-        calculator.computed(operand, operand2, operator);
+        System.out.println(calculator.computed(operand, operand2, operator));
     }
 }
