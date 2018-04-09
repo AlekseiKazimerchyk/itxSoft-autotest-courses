@@ -6,20 +6,24 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Calculator {
-    private Map<Character, Command> operationsMap = new HashMap();
+    private Map<String, Command> operationsMap = new HashMap();
 
     public Calculator() {
-        operationsMap.put('+', new AddCommand());
-        operationsMap.put('-', new SubCommand());
-        operationsMap.put('*', new MulCommand());
-        operationsMap.put('/', new DivCommand());
-        operationsMap.put('^', new PowCommand());
-        operationsMap.put('%', new ModCommand());
+        operationsMap.put("+", new AddCommand());
+        operationsMap.put("-", new SubCommand());
+        operationsMap.put("*", new MulCommand());
+        operationsMap.put("/", new DivCommand());
+        operationsMap.put("^", new PowCommand());
+        operationsMap.put("%", new ModCommand());
+        operationsMap.put("log", new LogCommand());
+        operationsMap.put("log10", new Log10Command());
+        operationsMap.put("sqrt", new SqrtCommand());
+        operationsMap.put("sqrtn", new SqrtNCommand());
     }
 
-    public double computed(double operand, double operand2, char operator) {
+    public double computed(String operator, double... operand) {
         Command command = operationsMap.get(operator);
-        return command.execute(operand, operand2);
+        return command.execute(operand);
     }
 
 

@@ -2,6 +2,6 @@ package by.kaz.cousres.calculator.operations;
 
 public interface Command {
 
-    double execute(double operand, double operand2);
+    double execute(double... operand);
 
 }

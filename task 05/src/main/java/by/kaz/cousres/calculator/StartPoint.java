@@ -8,9 +8,10 @@ public class StartPoint {
         Calculator calculator = new Calculator();
 
         double operand = scanner.nextDouble();
-        char operator = scanner.next().charAt(0);
+        String operator = scanner.next();
         double operand2 = scanner.nextDouble();
 
-        System.out.println(calculator.computed(operand, operand2, operator));
+
+        System.out.println(calculator.computed(operator, operand, operand2));
     }
 }
