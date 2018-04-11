@@ -26,3 +26,8 @@ hs_err_pid*
 out/
 target/
 *.iml
+
+#Nodejs and Protractor
+package-lock.json
+node_modules/
+
