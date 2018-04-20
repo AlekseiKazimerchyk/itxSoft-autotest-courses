@@ -11,6 +11,14 @@ function AngularDocsPage() {
             return element(by.tagName('aio-shell'));
         },
 
+        getFindField: function () {
+          return $('input[aria-label="search"]');
+        },
+        getSearchResults: function () {
+            return $$('aio-search-results')
+                .$$('div')
+                .$$('div.search-area');
+        },
         getSideNav: function () {
             return $('mat-sidenav.sidenav.mat-sidenav');
         },

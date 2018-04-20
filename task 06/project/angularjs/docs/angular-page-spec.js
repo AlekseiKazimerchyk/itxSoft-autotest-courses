@@ -40,10 +40,10 @@ describe('Страница angular.io', function () {
 
         it('Подразделы Tutorial selected', function () {
             angularPage.getListNavItems().get(1).click();
-            for (var i = 0; i < angularPage.getListTutorials().lenght; i++) {
-                angularPage.getListTutorials().get(i).click();
-                expect(angularPage.getListTutorials().get(i).getAttribute('class')).toContain('selected');
-            }
+            angularPage.getListTutorials().each(function (items) {
+                items.click();
+                expect(items.getAttribute('class')).toContain('selected');
+            });
         });
 
         it('При клике свернётся список разделов TUTORIAL', function () {
@@ -93,11 +93,20 @@ describe('Страница angular.io', function () {
             browser.ignoreSynchronization = false;
         });
 
-        it('Должна открыться страница стартовая страница home', function () {
+        it('Должна открыться стартовая страница home', function () {
             angularPage.getLinkHome().click();
             expect(browser.getCurrentUrl()).toEqual('https://angular.io/');
         });
 
-    });
+        it('Поиск по значению api', function () {
+            angularPage.getFindField().sendKeys('api');
+            browser.waitForAngular(function () {
+                angularPage.getSearchResults().getText().then(function (text) {
+                    expect(text.toEquals('Search Results'));
+                });
+            });
 
+        });
+
+    });
 });
