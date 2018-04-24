@@ -1,4 +1,4 @@
-# itxSoft-autotest-courses #
+﻿# itxSoft-autotest-courses #
 
 ### task 01
   - тест-кейсы для карандаша 
@@ -20,3 +20,7 @@
   
 ### task 06
   - тесты на [angular.io/docs](https://angular.io/docs)
+
+### task 07 async
+  - SELENIUM_PROMISE_MANAGER: false
+  - async тесты на [angular.io/docs](https://angular.io/docs)
